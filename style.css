@@ -1,0 +1,90 @@
+:root {
+    --bg: #000;
+    --fg: #fff;
+    --border: #1a1a1a;
+    --dim: #888;
+    --hover: #111;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-links { display: flex; gap: 40px; }
+.nav-links a { 
+    color: var(--dim); 
+    text-decoration: none; 
+    font-size: 13px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    transition: color 0.2s;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--fg); }
+
+/* Typography */
+h1 { font-size: 80px; font-weight: 700; letter-spacing: -4px; margin: 100px 0 20px; }
+.lead { color: var(--dim); font-size: 20px; max-width: 500px; margin-bottom: 60px; }
+
+/* Grid for Downloads/Contact */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--border);
+}
+
+.grid-item {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.grid-item:nth-child(odd) { padding-right: 40px; border-right: 1px solid var(--border); }
+.grid-item:nth-child(even) { padding-left: 40px; }
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background: var(--fg);
+    color: var(--bg);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: opacity 0.2s;
+}
+
+.btn:hover { opacity: 0.8; }
+
+footer {
+    padding: 100px 0 40px;
+    color: var(--dim);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 48px; letter-spacing: -2px; }
+    .grid { grid-template-columns: 1fr; }
+    .grid-item:nth-child(odd) { border-right: none; padding-right: 0; }
+    .grid-item:nth-child(even) { padding-left: 0; }
+}
